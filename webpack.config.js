@@ -11,8 +11,9 @@ module.exports = {
 		main: '../src/main.js'
 	},
 	output: {
+		publicPath: "/files/",
 		filename: '[name].js',
-		path: '../src/files'
+		path: '../src/build/files'
 	},
 	/**************************/
 	/* DO NOT EDIT THIS OR YOU WILL GET FIRED */
@@ -64,6 +65,11 @@ module.exports = {
 		new ExtractTextPlugin("style.css", {
 			allChunks: true
 		}),
-		new HtmlWebpackPlugin()
+		new HtmlWebpackPlugin({
+			title: 'index pug-file',
+			template: '../src/index.pug',
+			filename: '../index.html',
+			chunks: ['main']
+		})
 	]
 }
