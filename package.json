@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --content-base ../src/files --hot",
-    "watch": "webpack --watch",
-    "build": "webpack",
+    "watch": "webpack --watch --config webpack.config.dev.js",
+    "build": "webpack --progress --colors --config webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
@@ -8,15 +9,21 @@ module.exports = {
 	/**************************/
 	/* ADD CUSTOM CONFIG HERE */
 	entry: {
-		main: '../src/main.js'
+		"overlay-delivery-window-promos": '../src/components/overlay-delivery-window-promos/overlay-delivery-window-promos.js',
+		"overlay-calculate-installments": '../src/components/overlay-calculate-installments/overlay-calculate-installments.js'
 	},
 	output: {
 		publicPath: "/files/",
 		filename: '[name].js',
-		path: '../src/build/files'
+		path: '../src/build/js'
 	},
 	/**************************/
 	/* DO NOT EDIT THIS OR YOU WILL GET FIRED */
+	externals: {
+		"react": "React",
+        "react-dom": "ReactDOM",
+		"lodash": "lodash"
+	},
 	module: {
 		loaders: [{
 			test: /\.js$/,
@@ -62,14 +69,10 @@ module.exports = {
 		];
 	},
 	plugins: [
-		new ExtractTextPlugin("style.css", {
+		new ExtractTextPlugin("../css/style.css", {
 			allChunks: true
 		}),
-		new HtmlWebpackPlugin({
-			title: 'index pug-file',
-			template: '../src/index.pug',
-			filename: '../index.html',
-			chunks: ['main']
-		})
+		new webpack.optimize.UglifyJsPlugin(),
+		new webpack.optimize.DedupePlugin()
 	]
 }
