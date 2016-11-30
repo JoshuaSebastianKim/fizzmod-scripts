@@ -21,7 +21,7 @@ module.exports = {
 	/* DO NOT EDIT THIS OR YOU WILL GET FIRED */
 	externals: {
 		"react": "React",
-        "react-dom": "ReactDOM",
+		"react-dom": "ReactDOM",
 		"lodash": "lodash"
 	},
 	module: {
@@ -69,6 +69,11 @@ module.exports = {
 		];
 	},
 	plugins: [
+		new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+			}
+		}),
 		new ExtractTextPlugin("../css/style.css", {
 			allChunks: true
 		}),
