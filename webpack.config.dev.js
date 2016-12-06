@@ -10,7 +10,9 @@ module.exports = {
 	/* ADD CUSTOM CONFIG HERE */
 	entry: {
 		"overlay-delivery-window-promos": '../src/components/overlay-delivery-window-promos/overlay-delivery-window-promos.js',
-		"overlay-calculate-installments": '../src/components/overlay-calculate-installments/overlay-calculate-installments.js'
+		"overlay-calculate-installments": '../src/components/overlay-calculate-installments/overlay-calculate-installments.js',
+		"store-payment-methods": "../src/components/store-payment-methods/store-payment-methods.js",
+		"discounts": "../src/components/discounts/discounts.js"
 	},
 	output: {
 		publicPath: "/files/",
@@ -25,6 +27,13 @@ module.exports = {
 		"lodash": "lodash"
 	},
 	module: {
+		// preLoaders: [
+        //     {
+        //         test: /\.js$/, // include .js files
+        //         exclude: /node_modules/, // exclude any and all files in the node_modules folder
+        //         loader: "jshint-loader"
+        //     }
+        // ],
 		loaders: [{
 			test: /\.js$/,
 			exclude: /node_modules/,
@@ -39,6 +48,9 @@ module.exports = {
 					require.resolve('babel-plugin-transform-es2015-modules-amd')
 				]
 			}
+		}, {
+			test: /\.json$/,
+			loader: "json-loader"
 		}, {
 			test: /\.css$/,
 			loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss')
@@ -69,8 +81,9 @@ module.exports = {
 		];
 	},
 	plugins: [
-		new ExtractTextPlugin("../styles/style.css", {
-			allChunks: true
-		})
-	]
+		new ExtractTextPlugin("../styles/[name].css")
+	],
+	jshint: {
+
+	}
 }
