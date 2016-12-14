@@ -19,7 +19,11 @@
     "url": "https://github.com/JoshuaSebastianKim/fizzmod-scripts/issues"
   },
   "homepage": "https://github.com/JoshuaSebastianKim/fizzmod-scripts#readme",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "devDependencies": {
+    "autoprefixer": "^6.5.3",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
     "babel-plugin-transform-es2015-modules-amd": "^6.18.0",
@@ -32,6 +36,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.1",
+    "jshint": "^2.9.4",
     "jshint-loader": "^0.8.3",
     "json-loader": "^0.5.4",
     "postcss-loader": "^1.1.1",
@@ -39,10 +44,13 @@
     "pug-loader": "^2.3.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.3"
+    "webpack": "^1.10.5"
   },
   "dependencies": {
     "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react-collapse": "^2.3.3",
+    "react-dom": "^15.4.0",
+    "react-height": "^2.1.1",
+    "react-motion": "^0.4.6"
   }
 }

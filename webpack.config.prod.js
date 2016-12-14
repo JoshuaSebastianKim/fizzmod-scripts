@@ -12,7 +12,7 @@ module.exports = {
 		"overlay-delivery-window-promos": '../src/components/overlay-delivery-window-promos/overlay-delivery-window-promos.js',
 		"overlay-calculate-installments": '../src/components/overlay-calculate-installments/overlay-calculate-installments.js',
 		"store-payment-methods": "../src/components/store-payment-methods/store-payment-methods.js",
-		"discounts": "../src/components/discounts/discounts.js"
+		"discounts": "../src/components/discounts/DiscountContainer.js"
 	},
 	output: {
 		publicPath: "/files/",
