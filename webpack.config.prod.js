@@ -2,18 +2,12 @@ var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var pug = require("pug-loader");
+var paths = require('./paths.js')
 
 module.exports = {
 	/**************************/
 	/* ADD CUSTOM CONFIG HERE */
-	entry: {
-		"overlay-delivery-window-promos": '../src/components/overlay-delivery-window-promos/overlay-delivery-window-promos.js',
-		"overlay-calculate-installments": '../src/components/overlay-calculate-installments/overlay-calculate-installments.js',
-		"store-payment-methods": "../src/components/store-payment-methods/store-payment-methods.js",
-		"discounts": "../src/components/discounts/DiscountContainer.js"
-	},
+	entry: paths,
 	output: {
 		publicPath: "/files/",
 		filename: '[name].js',
@@ -24,7 +18,9 @@ module.exports = {
 	externals: {
 		"react": "React",
 		"react-dom": "ReactDOM",
-		"lodash": "lodash"
+		"lodash": "lodash",
+		"vtexjs": "vtexjs",
+		"Fizzmod": "Fizzmod"
 	},
 	module: {
 		loaders: [{
@@ -41,6 +37,9 @@ module.exports = {
 					require.resolve('babel-plugin-transform-es2015-modules-amd')
 				]
 			}
+		}, {
+			test: /\.json$/,
+			loader: "json-loader"
 		}, {
 			test: /\.css$/,
 			loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss')
