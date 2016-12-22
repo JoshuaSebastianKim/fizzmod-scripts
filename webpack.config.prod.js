@@ -9,9 +9,9 @@ module.exports = {
 	/* ADD CUSTOM CONFIG HERE */
 	entry: paths,
 	output: {
-		publicPath: "/files/",
-		filename: '[name].js',
-		path: '../build/js'
+		publicPath: "/files",
+		filename: 'js/[name].js',
+		path: '../build'
 	},
 	/**************************/
 	/* DO NOT EDIT THIS OR YOU WILL GET FIRED */
@@ -41,12 +41,19 @@ module.exports = {
 			test: /\.json$/,
 			loader: "json-loader"
 		}, {
+			test: /\.(scss|sass)$/,
+			loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
+		}, {
 			test: /\.css$/,
 			loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss')
 		}, {
-			test: /\.(pug|jade)$/,
-			loader: "pug-loader"
-		}]
+            test: /\.svg$/,
+            loader: 'file',
+			query: {
+				publicPath: "/",
+				name: "arquivos/[name].[ext]"
+			}
+        }]
 	},
 	resolve: {
 		extensions: ['', '.jsx', '.js', '.json', ".css"],
@@ -75,7 +82,7 @@ module.exports = {
 				'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 			}
 		}),
-		new ExtractTextPlugin("../css/[name].css"),
+		new ExtractTextPlugin("css/[name].css"),
 		new webpack.optimize.UglifyJsPlugin(),
 		new webpack.optimize.DedupePlugin()
 	]

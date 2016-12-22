@@ -1,16 +1,16 @@
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
-var paths = require('./paths.js')
+var paths = require('./paths.js');
 
 module.exports = {
     /**************************/
     /* ADD CUSTOM CONFIG HERE */
     entry: paths,
     output: {
-        publicPath: "/files/",
-        filename: '[name].js',
-        path: '../src/js'
+        publicPath: "/files",
+        filename: 'js/[name].js',
+        path: '../src'
     },
     /**************************/
     /* DO NOT EDIT THIS OR YOU WILL GET FIRED */
@@ -22,13 +22,6 @@ module.exports = {
         "Fizzmod": "Fizzmod"
     },
     module: {
-        // preLoaders: [
-        //     {
-        //         test: /\.js$/, // include .js files
-        //         exclude: /node_modules/, // exclude any and all files in the node_modules folder
-        //         loader: "jshint-loader"
-        //     }
-        // ],
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
@@ -47,17 +40,17 @@ module.exports = {
             test: /\.json$/,
             loader: "json-loader"
         }, {
+			test: /\.(scss|sass)$/,
+			loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
+		}, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss')
-        }, {
-            test: /\.(pug|jade)$/,
-            loader: "pug-loader"
         }, {
             test: /\.svg$/,
             loader: 'file',
 			query: {
-				publicPath: "/arquivos",
-				name: "../images/[name].[ext]"
+				publicPath: "/",
+				name: "arquivos/[name].[ext]"
 			}
         }]
     },
@@ -83,7 +76,7 @@ module.exports = {
         ];
     },
     plugins: [
-        new ExtractTextPlugin("../styles/[name].css")
+        new ExtractTextPlugin("styles/[name].css")
     ],
     jshint: {
         esversion: 6
