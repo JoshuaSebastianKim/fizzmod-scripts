@@ -4,9 +4,9 @@
   "description": "fizzmod scripts",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base ../src/files --hot",
-    "watch": "webpack --watch --config webpack.config.dev.js",
-    "build": "webpack --progress --colors --config webpack.config.prod.js",
+    "start": "node scripts/start.js",
+    "watch": "webpack --watch --config configs/webpack.config.dev.js",
+    "build": "webpack --progress --colors --config configs/webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,7 +46,9 @@
     "pug-loader": "^2.3.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
-    "webpack": "^1.10.5"
+    "webpack": "^1.10.5",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "radium": "^0.18.1",

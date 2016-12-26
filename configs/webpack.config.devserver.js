@@ -9,8 +9,8 @@ module.exports = {
     entry: paths,
     output: {
         publicPath: "/files",
-        filename: 'js/[name].js',
-        path: '../src'
+        filename: '[name].js',
+        path: path.resolve(__dirname, "/build")
     },
     /**************************/
     /* DO NOT EDIT THIS OR YOU WILL GET FIRED */
@@ -57,11 +57,11 @@ module.exports = {
     resolve: {
         extensions: ['', '.jsx', '.js', '.json', ".css"],
         root: [
-            path.resolve(__dirname, "node_modules")
+            path.resolve(__dirname, "../node_modules")
         ]
     },
     resolveLoader: {
-        root: path.join(__dirname, 'node_modules'),
+        root: path.join(__dirname, '../node_modules'),
     },
     postcss: function() {
         return [
@@ -76,7 +76,7 @@ module.exports = {
         ];
     },
     plugins: [
-        new ExtractTextPlugin("styles/[name].css")
+        new ExtractTextPlugin("[name].css")
     ],
     jshint: {
         esversion: 6
