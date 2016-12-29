@@ -58,11 +58,11 @@ module.exports = {
 	resolve: {
 		extensions: ['', '.jsx', '.js', '.json', ".css"],
 		root: [
-			path.resolve(__dirname, "node_modules")
+			path.resolve(__dirname, "../node_modules")
 		]
 	},
 	resolveLoader: {
-		root: path.join(__dirname, 'node_modules'),
+		root: path.join(__dirname, '../node_modules'),
 	},
 	postcss: function() {
 		return [
