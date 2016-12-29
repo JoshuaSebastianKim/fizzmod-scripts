@@ -11,7 +11,7 @@ module.exports = {
 	output: {
 		publicPath: "/files",
 		filename: 'js/[name].js',
-		path: '../../build'
+		path: '../build'
 	},
 	/**************************/
 	/* DO NOT EDIT THIS OR YOU WILL GET FIRED */
