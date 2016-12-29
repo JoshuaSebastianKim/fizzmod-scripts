@@ -58,6 +58,7 @@
     "react-height": "^2.1.1",
     "react-motion": "^0.4.6",
     "react-select": "^1.0.0-rc.2",
-    "react-slick": "^0.14.5"
+    "react-slick": "^0.14.5",
+    "swiper-r": "^0.1.3"
   }
 }
