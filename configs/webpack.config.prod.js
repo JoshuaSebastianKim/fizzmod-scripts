@@ -34,6 +34,7 @@ module.exports = {
 				],
 				plugins: [
 					require.resolve('babel-plugin-transform-runtime'),
+					require.resolve('babel-plugin-transform-class-properties'),
 					require.resolve('babel-plugin-transform-es2015-modules-amd')
 				]
 			}
