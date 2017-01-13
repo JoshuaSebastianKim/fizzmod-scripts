@@ -29,7 +29,7 @@ module.exports = {
 			loader: 'babel-loader',
 			query: {
 				presets: [
-					require.resolve('babel-preset-es2015'),
+					require.resolve('babel-preset-stage-0'),
 					require.resolve('babel-preset-react')
 				],
 				plugins: [
@@ -80,7 +80,7 @@ module.exports = {
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {
-				'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+				'NODE_ENV': JSON.stringify(process.env.NODE_ENV || "production")
 			}
 		}),
 		new ExtractTextPlugin("css/[name].css"),

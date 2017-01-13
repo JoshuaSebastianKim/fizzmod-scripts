@@ -6,4 +6,5 @@ module.exports = {
 	"store-faqs": "../src/containers/FaqsContainer/FaqsContainer.js",
 	"contact-contact": "../src/containers/ContactContainer/ContactContainer.js",
 	"discounts": "../src/containers/DiscountContainer/DiscountContainer.js",
+	"search": "../src/containers/SearchContainer/SearchContainer.js",
 };
