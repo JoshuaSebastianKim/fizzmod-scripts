@@ -48,11 +48,7 @@ module.exports = {
             loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss')
         }, {
             test: /\.svg$/,
-            loader: 'file',
-			query: {
-				publicPath: "/",
-				name: "arquivos/[name].[ext]"
-			}
+            loader: 'svg-inline'
         }]
     },
     resolve: {
