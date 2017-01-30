@@ -64,7 +64,7 @@ module.exports = {
     },
 	devtool: "inline-source-map",
 	sassLoader: {
-		data: '@import "variables";',
+		data: '@import "variables"; @import "mixins";',
 		includePaths: [
 			path.resolve(__dirname, "../../src/styles")
 		]
