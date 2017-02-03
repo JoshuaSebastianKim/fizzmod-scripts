@@ -64,7 +64,7 @@ module.exports = {
 		root: path.join(__dirname, '../node_modules'),
 	},
 	sassLoader: {
-		data: '@import "variables";',
+		data: '@import "variables"; @import "mixins";',
 		includePaths: [
 			path.resolve(__dirname, "../../src/styles")
 		]
