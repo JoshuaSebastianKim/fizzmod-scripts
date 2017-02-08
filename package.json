@@ -74,6 +74,7 @@
     "redux-form": "^6.4.3",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
+    "reselect": "^2.5.4",
     "svg-inline-react": "^1.0.3",
     "swiper-r": "^0.1.3"
   }
