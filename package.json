@@ -64,6 +64,7 @@
     "react-dom": "^15.4.0",
     "react-google-recaptcha": "^0.5.4",
     "react-height": "^2.1.1",
+    "react-modal": "^1.6.5",
     "react-motion": "^0.4.6",
     "react-redux": "^5.0.1",
     "react-scroll": "^1.4.5",
