@@ -17,7 +17,6 @@ module.exports = {
     externals: {
         "react": "React",
         "react-dom": "ReactDOM",
-        "lodash": "lodash",
         "vtexjs": "vtexjs",
 		"jQuery": "jQuery",
         "Fizzmod": "Fizzmod"
@@ -87,4 +86,4 @@ module.exports = {
     jshint: {
         esversion: 6
     }
-}
+};
