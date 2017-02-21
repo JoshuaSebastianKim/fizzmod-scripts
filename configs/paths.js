@@ -1,3 +1,3 @@
 module.exports = {
-	"file-name": "file-path"
+	"installments-calculator": "../src/views/InstallmentsCalculatorView.js"
 };
