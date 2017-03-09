@@ -7,11 +7,12 @@ var paths = require('./paths.js')
 module.exports = {
 	/**************************/
 	/* ADD CUSTOM CONFIG HERE */
+	context: path.resolve(__dirname, '../'),
 	entry: paths,
 	output: {
 		publicPath: "/files",
 		filename: 'js/[name].js',
-		path: '../build'
+		path: path.resolve(__dirname, "../build")
 	},
 	/**************************/
 	/* DO NOT EDIT THIS OR YOU WILL GET FIRED */
@@ -66,7 +67,7 @@ module.exports = {
 	sassLoader: {
 		data: '@import "variables"; @import "mixins";',
 		includePaths: [
-			path.resolve(__dirname, "../../src/styles")
+			path.resolve(__dirname, "../src/styles")
 		]
 	},
 	postcss: function() {

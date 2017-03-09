@@ -6,11 +6,12 @@ var paths = require('./paths.js');
 module.exports = {
     /**************************/
     /* ADD CUSTOM CONFIG HERE */
+	context: path.resolve(__dirname, '../'),
     entry: paths,
     output: {
         publicPath: "/files",
-        filename: '[name].js',
-        path: path.resolve(__dirname, "/build")
+        filename: 'js/[name].js',
+        path: path.resolve(__dirname, "../src")
     },
     /**************************/
     /* DO NOT EDIT THIS OR YOU WILL GET FIRED */
@@ -19,6 +20,7 @@ module.exports = {
         "react-dom": "ReactDOM",
         "lodash": "lodash",
         "vtexjs": "vtexjs",
+		"jQuery": "jQuery",
         "Fizzmod": "Fizzmod"
     },
     module: {
@@ -28,11 +30,13 @@ module.exports = {
             loader: 'babel-loader',
             query: {
                 presets: [
+                    require.resolve('babel-preset-stage-0'),
                     require.resolve('babel-preset-es2015'),
                     require.resolve('babel-preset-react')
                 ],
                 plugins: [
                     require.resolve('babel-plugin-transform-runtime'),
+                    require.resolve('babel-plugin-transform-class-properties'),
                     require.resolve('babel-plugin-transform-es2015-modules-amd')
                 ]
             }
@@ -47,11 +51,7 @@ module.exports = {
             loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss')
         }, {
             test: /\.svg$/,
-            loader: 'file',
-			query: {
-				publicPath: "/",
-				name: "arquivos/[name].[ext]"
-			}
+            loader: 'svg-inline'
         }]
     },
     resolve: {
@@ -63,6 +63,13 @@ module.exports = {
     resolveLoader: {
         root: path.join(__dirname, '../node_modules'),
     },
+	devtool: "inline-source-map",
+	sassLoader: {
+		data: '@import "variables"; @import "mixins";',
+		includePaths: [
+			path.resolve(__dirname, "../src/styles")
+		]
+	},
     postcss: function() {
         return [
             autoprefixer({
@@ -72,11 +79,11 @@ module.exports = {
                     'Firefox ESR',
                     'not ie < 9', // React doesn't support IE8 anyway
                 ]
-            }),
+            })
         ];
     },
     plugins: [
-        new ExtractTextPlugin("[name].css")
+        new ExtractTextPlugin("styles/[name].css")
     ],
     jshint: {
         esversion: 6
