@@ -20,7 +20,8 @@ module.exports = {
         "lodash": "lodash",
         "vtexjs": "vtexjs",
 		"jQuery": "jQuery",
-        "Fizzmod": "Fizzmod"
+        "Fizzmod": "Fizzmod",
+		"google": "google"
     },
     module: {
         loaders: [{
