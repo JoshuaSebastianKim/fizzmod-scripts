@@ -96,7 +96,8 @@
     "swiper-r": "^0.1.3",
     "whatwg-fetch": "^2.0.3"
   }
-}```
+}
+```
 
 2. Una vez copiado el contenido, en la terminal ejecutar **npm install** para descargar e instalar las dependencias.
 
