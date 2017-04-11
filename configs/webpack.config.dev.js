@@ -21,7 +21,8 @@ module.exports = {
         "vtexjs": "vtexjs",
 		"jQuery": "jQuery",
         "Fizzmod": "Fizzmod",
-		"google": "google"
+		"google": "google",
+		"store": "store"
     },
     module: {
         loaders: [{
