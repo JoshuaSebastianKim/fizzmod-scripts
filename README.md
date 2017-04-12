@@ -2,7 +2,8 @@
 
 1. Dentro de la carpeta **root** crear el archivo *package.json* y copiar dentro el siguiente codigo.
 
-```{
+```
+{
   "name": "fizzmod-scripts",
   "version": "0.1.0",
   "description": "fizzmod scripts",
@@ -105,10 +106,14 @@
 
 El *package.json* viene con 2 scripts para correr con npm.
 
-```npm run watch```
+```
+npm run watch
+```
 
 Corre **webpack** en modo watch. Escucha cada cambio en los **.js** configurado en los entrys que es un *object* que es levandato desde el archivo **paths.js**, donde la **key** es el nombre final de los archivos generados (ej.: si nuestra entry se llama "script-principal", nuestros files compilados van a llamarse "script-principal.js" y "script-principal.css") y el value tiene que ser la ruta hacia el JS.
 
-```npn run build```
+```
+npn run build
+```
 
 Igual que el watch, pero genera los archivos dentro de una carpeta ***build*** y aplica optimizaciones al codigo como Uglify.js.
