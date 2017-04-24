@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const paths = require('./paths.js');
 
 // Configuration
@@ -42,6 +43,16 @@ const config = {
 					fallback: 'style-loader',
 					use: [
 						'css-loader',
+						{
+							loader: 'postcss-loader',
+							options: {
+								plugins: () => [
+									autoprefixer({
+										browsers: '> 1%, last 2 versions, iOS >= 8'
+									})
+								]
+							}
+						},
 						{
 							loader: 'sass-loader',
 							options: {

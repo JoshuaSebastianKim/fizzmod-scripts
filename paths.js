@@ -1,6 +1,6 @@
 module.exports = {
 	'overlay-calculate-installments': './src/views/InstallmentsCalculatorView.js',
-	'overlay-paper-gift': './src/components/overlay-paper-gift/overlay-paper-gift.js',
+	// 'overlay-paper-gift': './src/components/overlay-paper-gift/overlay-paper-gift.js',
 	'overlay-coupon-marketec': './src/views/CouponMarketecView.js',
 	'overlay-shipping-preference': './src/views/ShippingPreferenceView.js',
 	'store-payment-methods': './src/views/PaymentMethodsView.js',
