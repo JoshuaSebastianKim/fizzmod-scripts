@@ -7,8 +7,10 @@ module.exports = {
 	'store-shipping-methods': './src/views/ShippingMethodsView.js',
 	'store-faqs': './src/views/FaqsView.js',
 	'contact-contact': './src/views/ContactView.js',
+	'healthy-world': './src/views/HealthyWorld.js',
 	discounts: './src/views/DiscountView.js',
 	search: './src/views/SearchView.js',
+
 	vendor: [
 		'react',
 		'react-dom',
