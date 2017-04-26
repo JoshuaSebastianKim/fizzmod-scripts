@@ -13,6 +13,7 @@ module.exports = {
 		'react',
 		'react-dom',
 		'redux',
-		'react-redux'
+		'react-redux',
+		'babel-polyfill'
 	]
 };
