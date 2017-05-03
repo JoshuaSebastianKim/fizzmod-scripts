@@ -32,7 +32,7 @@ const config = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['react', 'env'],
+							presets: ['react', 'env', 'flow'],
 							plugins: ['transform-object-rest-spread', 'transform-class-properties', 'transform-decorators']
 						}
 					}
