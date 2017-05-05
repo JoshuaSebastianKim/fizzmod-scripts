@@ -93,6 +93,10 @@ if (NODE_ENV === 'development') {
 	config.output.path = path.join(__dirname, '../src');
 	config.output.filename = 'js/webpack/[name].js';
 
+	config.watchOptions = {
+		poll: true
+	};
+
 	// PLUGINS
 	config.plugins.push(
 		new ExtractTextPlugin({
