@@ -9,7 +9,8 @@ module.exports = {
 	// 'contact-contact': './src/views/ContactView.js',
 	// 'healthy-world': './src/views/HealthyWorld.js',
 	// discounts: './src/views/DiscountView.js',
-	search: './src/views/SearchView.js',
+	// search: './src/views/SearchView.js',
+	header: './src/views/HeaderView.js',
 
 	vendor: [
 		'react',
