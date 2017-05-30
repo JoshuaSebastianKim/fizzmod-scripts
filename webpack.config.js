@@ -3,22 +3,17 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths.js');
 
 // Configuration
-const { NODE_ENV } = process.env;
+const { argv, env } = process;
+const NODE_ENV = env.NODE_ENV || 'development';
 
 const config = {
 	entry: paths,
 	externals: {
-		react: 'React',
-		'react-dom': 'ReactDOM',
-		lodash: 'lodash',
-		vtexjs: 'vtexjs',
-		jQuery: 'jQuery',
-		Fizzmod: 'Fizzmod',
-		google: 'google',
-		store: 'store'
+		Fizzmod: 'Fizzmod'
 	},
 	output: {
 		filename: 'js/[name].js'
@@ -32,8 +27,13 @@ const config = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['react', 'env', 'flow'],
+							presets: [
+								['env', { modules: false }],
+								'react',
+								'flow'
+							],
 							plugins: [
+								'react-hot-loader/babel',
 								'transform-object-rest-spread',
 								'transform-class-properties',
 								'transform-decorators'
@@ -43,7 +43,9 @@ const config = {
 				]
 			}, {
 				test: /\.(css|scss|sass)$/,
-				use: ExtractTextPlugin.extract({
+				use: NODE_ENV === 'development' ?
+					['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+				 	: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: [
 						'css-loader',
@@ -76,9 +78,7 @@ const config = {
 	},
 	plugins: [
 		new webpack.DefinePlugin({
-			'process.env': {
-				'process.env': { NODE_ENV: JSON.stringify(NODE_ENV || 'development') }
-			}
+			'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: ['vendor', 'manifest'],
@@ -88,7 +88,8 @@ const config = {
 	devtool: 'source-map'
 };
 
-if (NODE_ENV === 'development') {
+// Watch
+if (NODE_ENV === 'development' && argv.indexOf('--watch') !== -1) {
 	// OUTPUT
 	config.output.path = path.join(__dirname, '../src');
 	config.output.filename = 'js/webpack/[name].js';
@@ -101,6 +102,23 @@ if (NODE_ENV === 'development') {
 	config.plugins.push(
 		new ExtractTextPlugin({
 			filename: 'styles/webpack/[name].css'
+		})
+	);
+}
+
+if (NODE_ENV === 'development' && argv.indexOf('--watch') === -1) {
+	// OUTPUT
+	config.output.path = path.join(__dirname, '../dist');
+	config.output.filename = '[name].js';
+
+
+	// PLUGINS
+	config.plugins.push(
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin(),
+		new HtmlWebpackPlugin({
+			title: 'Dev server',
+			template: 'templates/index.ejs'
 		})
 	);
 }
