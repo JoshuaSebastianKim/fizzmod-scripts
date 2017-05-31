@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths.js');
+const vtexrc = require('../.vtexrc');
 
 // Configuration
 const { argv, env } = process;
@@ -13,7 +14,9 @@ const NODE_ENV = env.NODE_ENV || 'development';
 const config = {
 	entry: paths,
 	externals: {
-		Fizzmod: 'Fizzmod'
+		vtexjs: 'vtexjs',
+		Fizzmod: 'Fizzmod',
+		jQuery: 'jQuery'
 	},
 	output: {
 		filename: 'js/[name].js'
@@ -43,9 +46,19 @@ const config = {
 				]
 			}, {
 				test: /\.(css|scss|sass)$/,
-				use: NODE_ENV === 'development' ?
-					['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-				 	: ExtractTextPlugin.extract({
+				use: NODE_ENV === 'development' ? [
+					'style-loader',
+					'css-loader?sourceMap',
+					{
+						loader: 'sass-loader',
+						options: {
+							data: '@import "variables"; @import "mixins";',
+							includePaths: [
+								path.resolve(__dirname, '../src/styles')
+							]
+						}
+					}
+				] : ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: [
 						'css-loader',
@@ -106,11 +119,28 @@ if (NODE_ENV === 'development' && argv.indexOf('--watch') !== -1) {
 	);
 }
 
+// DevServer
 if (NODE_ENV === 'development' && argv.indexOf('--watch') === -1) {
+	// ENTRY
+	const { entry } = config;
+	config.entry = Object.keys(entry).reduce((entries, key) => {
+		if (key === 'vendor') {
+			return entries;
+		}
+
+		Object.assign(entries, {
+			[key]: [
+				'react-hot-loader/patch',
+				entry[key]
+			]
+		});
+
+		return entries;
+	}, {});
+
 	// OUTPUT
 	config.output.path = path.join(__dirname, '../dist');
 	config.output.filename = '[name].js';
-
 
 	// PLUGINS
 	config.plugins.push(
@@ -121,8 +151,15 @@ if (NODE_ENV === 'development' && argv.indexOf('--watch') === -1) {
 			template: 'templates/index.ejs'
 		})
 	);
+
+	// DevServer
+	config.devServer = {
+		publicPath: '/',
+		hot: true
+	};
 }
 
+// Build
 if (NODE_ENV === 'production') {
 	// OUTPUT
 	config.output.path = path.join(__dirname, '../build');
@@ -132,6 +169,10 @@ if (NODE_ENV === 'production') {
 		new webpack.optimize.UglifyJsPlugin(),
 		new ExtractTextPlugin({
 			filename: 'styles/[name].css'
+		}),
+		new HtmlWebpackPlugin({
+			title: 'Dev server',
+			template: 'fizzmod-scripts/templates/index.ejs'
 		})
 	);
 }
