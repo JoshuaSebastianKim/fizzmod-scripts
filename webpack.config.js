@@ -5,7 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths.js');
-const vtexrc = require('../.vtexrc');
 
 // Configuration
 const { argv, env } = process;
@@ -16,7 +15,8 @@ const config = {
 	externals: {
 		vtexjs: 'vtexjs',
 		Fizzmod: 'Fizzmod',
-		jQuery: 'jQuery'
+		jQuery: 'jQuery',
+		lodash: 'lodash'
 	},
 	output: {
 		filename: 'js/[name].js'
@@ -148,7 +148,7 @@ if (NODE_ENV === 'development' && argv.indexOf('--watch') === -1) {
 		new webpack.NamedModulesPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'Dev server',
-			template: 'templates/index.ejs'
+			template: 'fizzmod-scripts/templates/index.ejs'
 		})
 	);
 
