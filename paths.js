@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
 	// 'overlay-calculate-installments': path.resolve(__dirname, '../src/views/InstallmentsCalculatorView.js'),
 	// 'overlay-paper-gift': path.resolve(__dirname, '../src/components/overlay-paper-gift/overlay-paper-gift.js'),
-	'overlay-coupon-marketec': path.resolve(__dirname, '../src/views/CouponMarketecView.js'),
+	// 'overlay-coupon-marketec': path.resolve(__dirname, '../src/views/CouponMarketecView.js'),
 	// 'overlay-shipping-preference': path.resolve(__dirname, '../src/views/ShippingPreferenceView.js'),
 	// 'store-payment-methods': path.resolve(__dirname, '../src/views/PaymentMethodsView.js'),
 	// 'store-shipping-methods': path.resolve(__dirname, '../src/views/ShippingMethodsView.js'),
