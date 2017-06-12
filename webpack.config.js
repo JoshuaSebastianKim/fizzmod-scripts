@@ -5,13 +5,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths.js');
+const clearFolder = require('./clear-folder.js');
 
 // Configuration
 const { argv, env } = process;
 const NODE_ENV = env.NODE_ENV || 'development';
 
+const ENV = argv.find(arg => arg.includes("--env")).replace('--env=', '');
+const entry = paths[ENV];
+
+clearFolder(path.join(__dirname, '../build', ENV));
+
 const config = {
-	entry: paths,
+	entry,
 	externals: {
 		vtexjs: 'vtexjs',
 		Fizzmod: 'Fizzmod',
@@ -162,7 +168,7 @@ if (NODE_ENV === 'development' && argv.indexOf('--watch') === -1) {
 // Build
 if (NODE_ENV === 'production') {
 	// OUTPUT
-	config.output.path = path.join(__dirname, '../build');
+	config.output.path = path.join(__dirname, '../build', ENV);
 
 	// PLUGINS
 	config.plugins.push(
