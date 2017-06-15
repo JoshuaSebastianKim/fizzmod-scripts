@@ -55,7 +55,7 @@ const configPromise = new Promise(function(resolve, reject) {
 						]
 					}, {
 						test: /\.(css|scss|sass)$/,
-						use: NODE_ENV === 'development' ? [
+						use: NODE_ENV === 'development' && argv.indexOf('--watch') === -1 ? [
 							'style-loader',
 							'css-loader?sourceMap',
 							{
@@ -126,6 +126,8 @@ const configPromise = new Promise(function(resolve, reject) {
 					filename: 'styles/webpack/[name].css'
 				})
 			);
+
+
 		}
 
 		// DevServer
