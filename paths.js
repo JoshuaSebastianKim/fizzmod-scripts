@@ -29,8 +29,8 @@ module.exports = {
 		]
 	},
 	CO: {
-		// 'overlay-paper-gift': path.resolve(__dirname, '../src/components/overlay-paper-gift/overlay-paper-gift.js'),
-		// 'coverage-search': path.resolve(__dirname, '../src/views/CoverageSearchView.js'),
+		'overlay-paper-gift': path.resolve(__dirname, '../src/components/overlay-paper-gift/overlay-paper-gift.js'),
+		'coverage-search': path.resolve(__dirname, '../src/views/CoverageSearchView.js'),
 		'healthy-world': path.resolve(__dirname, '../src/views/HealthyWorld.js'),
 		vendor: [
 			'react',
