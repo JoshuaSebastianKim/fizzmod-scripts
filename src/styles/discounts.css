@@ -1,0 +1,529 @@
+.bank {
+	background-image: url("/arquivos/sprite-cards-ar.png")
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+	.bank {
+		background-image: url("/arquivos/spritex2-cards-ar.png");
+		background-size: 931px 556px;
+	}
+}
+
+.bank--patagonia {
+	background-position: -25px -72px;
+	width: 230px;
+	height: 30px;
+}
+
+.bank--itau {
+	background-position: -308px -79px;
+	width: 90px;
+	height: 90px;
+}
+
+.bank--hipotecario {
+	background-position: -572px -86px;
+	width: 208px;
+	height: 75px;
+}
+
+.bank--icbc {
+	background-position: -12px -128px;
+	width: 186px;
+	height: 64px;
+}
+
+.bank--americanexpress {
+	background-position: -803px -77px;
+	width: 108px;
+	height: 94px;
+}
+
+.bank--provincia {
+	background-position: -659px -196px;
+	width: 180px;
+	height: 72px;
+}
+
+.bank--ciudad {
+	background-position: -285px -210px;
+	width: 210px;
+	height: 44px;
+}
+
+.bank--citi {
+	background-position: -432px -86px;
+	width: 130px;
+	height: 76px;
+}
+
+.bank--diners {
+	background-position: -502px -222px;
+	width: 135px;
+	height: 92px;
+}
+
+.bank--supervielle {
+	background-position: -43px -300px;
+	width: 196px;
+	height: 80px;
+}
+
+.bank--nacion {
+	background-position: -306px -352px;
+	width: 238px;
+	height: 48px;
+}
+
+.bank--macro {
+	background-position: -34px -204px;
+	width: 214px;
+	height: 57px;
+}
+
+.bank--naranja {
+	background-position: -28px -436px;
+	width: 82px;
+	height: 96px;
+}
+
+.bank--santafe {
+	background-position: -593px -352px;
+	width: 240px;
+	height: 48px;
+}
+
+.bank--jumbomas {
+	background-position: -147px -445px;
+	width: 124px;
+	height: 78px;
+}
+
+.bank--cencosud {
+	background-position: -290px -443px;
+	width: 125px;
+	height: 82px;
+}
+.discounts__item {
+	border: 3px solid #ededed;
+	margin-top: 20px;
+	border-radius: 10px;
+	padding: 25px 0;
+	cursor: pointer;
+	position: relative;
+	-webkit-transition: background-color .25s, border-color .25s;
+	transition: background-color .25s, border-color .25s;
+}
+
+.discounts__item:hover {
+	background-color: #f5f5f5;
+	border-color: #b5b5b5;
+}
+
+.discounts__item-visible {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	    -ms-flex-align: stretch;
+	        align-items: stretch;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.discounts__item-visible > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	border-left: 1px solid #ededed;
+}
+
+.discounts__item-visible > div:first-of-type {
+	margin-top: 0 !important;
+	border-left: 0;
+}
+
+.discounts__item .discounts__item-legals {
+	border-left: 0;
+}
+
+.discounts__item-days {
+	width: 180px;
+	font-size: 30px;
+	font-weight: 700;
+	color: #1FA02E;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.discounts__item-bank {
+	width: 235px;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.discounts__item-data {
+	width: 350px;
+	line-height: 1;
+	color: #1FA02E;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.discounts__item-discount {
+	font-size: 48px;
+	font-weight: 700;
+	padding-left: 12%;
+}
+
+.discounts__item-payment-method {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 10px;
+	padding-left: 12%;
+}
+
+.discounts__item-installments {
+	margin-top: 10px;
+	line-height: 20px;
+	padding-left: 12%;
+}
+
+.discounts__item-installments .installments {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.discounts__item-installments .cft {
+	font-size: 14px;
+	font-weight: 300;
+	color: #808080;
+	margin-left: 3px;
+}
+
+.discounts__item-info {
+	width: 430px;
+	font-size: 14px;
+	color: #666;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	line-height: 25px;
+}
+
+.discounts__item-info .info {
+	padding-left: 32px;
+}
+
+.discounts__item-legals {
+	width: 100%;
+}
+
+.discounts__item-legals .legals {
+	padding-top: 25px;
+	font-size: 12px;
+	line-height: 23px;
+}
+
+.discounts__item-collapse {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: #b0b0b0;
+	-webkit-animation: fadeIn .25s;
+	        animation: fadeIn .25s;
+	-webkit-transition: color .25s;
+	transition: color .25s;
+}
+
+.discounts__item-collapse:hover {
+	color: #323232
+}
+.discounts__shipping-text {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;;
+	-webkit-box-pack: center;;
+	-webkit-justify-content: center;;
+	    -ms-flex-pack: center;;
+	        justify-content: center;
+	height: 135px;
+	font-size: 20px;
+	font-weight: 300;
+	color: #323232;
+}
+
+.discounts__shipping-text strong {
+	font-weight: 600;
+	margin: 0 5px;
+}
+
+.discounts__shipping-text .color-primary {
+	color: #1FA02E;
+}
+
+.discounts__list {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-bottom: 105px;
+}
+/**
+ * DISCOUNTS
+ */
+.discounts__container {
+	margin-top: 25px;
+}
+
+.discounts__header {
+	text-align: center;
+	color: #323232;
+}
+
+.discounts__header-title {
+	font-size: 38px;
+	font-weight: 700;
+}
+
+.discounts__header-subtitle {
+	font-size: 22px;
+	font-weight: 300;
+	margin-top: 15px;
+}
+
+.discounts__body {
+	margin-top: 30px;
+}
+
+/**
+ * TYPE FILTERS
+ */
+.discounts__filter-type-container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.discounts__filter-type {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	height: 110px;
+	border: 1px solid #e5e5e5;
+	border-right: 0;
+	color: #999;
+	position: relative;
+	-webkit-transition: color .25s, background .25s;
+	transition: color .25s, background .25s;
+}
+
+.discounts__filter-type:before {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #1FA02E;
+	opacity: 0;
+	-webkit-transition: opacity .25s;
+	transition: opacity .25s;
+}
+
+.discounts__filter-type:hover  {
+	color: #323232;
+}
+
+.discounts__filter-type:first-of-type {
+	border-left: 0;
+}
+
+.discounts__filter-type--active {
+	color: #323232;
+	background-color: #f5f5f5;
+}
+
+.discounts__filter-type--active:before {
+	opacity: 1;
+}
+
+.discounts__filter-type--inactive {
+
+}
+
+.discounts__filter-icon .filter-date,
+.discounts__filter-icon .filter-bank,
+.discounts__filter-icon .cencosud {
+	font-size: 30px;
+}
+
+.discounts__filter-icon .jumbomas {
+	font-size: 22px;
+}
+
+.discounts__filter-text {
+	margin-left: 15px;
+	font-size: 22px;
+	font-weight: 600;
+}
+
+/**
+ * DAY FILTERS
+ */
+.discounts__filter-day-container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border-bottom: 1px solid #e5e5e5;
+	height: 128px;
+}
+
+.discounts__filter-day {
+	margin: 0 32px;
+	position: relative;
+	color: #A6A6A6;
+}
+
+.discounts__filter-day-name {
+	font-size: 23px;
+	font-weight: 700;
+	-webkit-transition: color .25s;
+	transition: color .25s;
+}
+
+.discounts__filter-day:before {
+	content: "\25CF";
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	font-size: 18px;
+	line-height: 1;
+	color: #1FA02E;
+	opacity: 0;
+	-webkit-transform: scale(0);
+	    -ms-transform: scale(0);
+	        transform: scale(0);
+	-webkit-transition: opacity .25s, -webkit-transform .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: opacity .25s, -webkit-transform .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: opacity .25s, transform .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: opacity .25s, transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), -webkit-transform .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.discounts__filter-day:hover {
+	color: #323232;
+}
+
+.discounts__filter-day--active {
+	color: #323232;
+}
+
+.discounts__filter-day--active:before {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	    -ms-transform: scale(1);
+	        transform: scale(1);
+}
+
+.discounts__filter-day--inactive {
+
+}
+
+/**
+ * BANK FILTERS
+ */
+.discounts__filter-bank-container {
+	margin-top: 23px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+.discounts__filter-bank {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	width: 187px;
+	height: 100px;
+	border: 3px solid #ededed;
+	border-radius: 10px;
+	margin: 7px;
+	-webkit-transition: background-color .25s, border-color .25s;
+	transition: background-color .25s, border-color .25s;
+}
+
+.discounts__filter-bank:hover {
+	background-color: #f5f5f5;
+	border-color: #b5b5b5;
+}
+
+.discounts__filter-bank .bank {
+	-webkit-transform: scale(.7);
+	    -ms-transform: scale(.7);
+	        transform: scale(.7);
+}
