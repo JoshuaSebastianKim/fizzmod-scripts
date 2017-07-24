@@ -86,7 +86,7 @@ async function configPromise() {
 							{
 								loader: 'sass-loader',
 								options: {
-									data: '@import "variables"; @import "mixins";',
+									data: `@import "variables"; @import "mixins"; $ENV: "${COUNTRY}";`,
 									includePaths: [
 										path.resolve(__dirname, '../src/styles')
 									]
