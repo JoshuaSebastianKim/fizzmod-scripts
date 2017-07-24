@@ -21,6 +21,7 @@ module.exports = {
 	},
 	CL: {
 		login: path.resolve(__dirname, '../src/views/LoginView.js'),
+		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
 		vendor: [
 			'react',
 			'react-dom',
