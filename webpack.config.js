@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths.js');
 const clearFolder = require('./clear-folder.js');
+const countryConfig = require('./countryConfig');
 const inquirer = require('inquirer');
 
 // Configuration
@@ -21,6 +22,9 @@ async function configPromise() {
 	}]);
 	const { COUNTRY } = answers;
 	const entry = paths[COUNTRY];
+	const auroraConfig = countryConfig[COUNTRY];
+	auroraConfig.ENV = COUNTRY;
+
 	const config = {
 		entry,
 		externals: {
@@ -102,7 +106,8 @@ async function configPromise() {
 		},
 		plugins: [
 			new webpack.DefinePlugin({
-				'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+				'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+				CONFIG: JSON.stringify(auroraConfig)
 			}),
 			new webpack.optimize.CommonsChunkPlugin({
 				name: ['vendor', 'manifest'],
