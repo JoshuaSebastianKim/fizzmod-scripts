@@ -1,6 +1,7 @@
 // Modules
 const path = require('path');
 const webpack = require('webpack');
+const fs = require('fs');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -13,6 +14,13 @@ const inquirer = require('inquirer');
 const { argv, env } = process;
 const NODE_ENV = env.NODE_ENV || 'development';
 
+const environmentMap = {
+	AR: 'jumboargentina',
+	CL: 'jumbo',
+	CO: 'jumbocolombiafood',
+	PE: 'wongfood'
+};
+
 async function configPromise() {
 	const answers = await inquirer.prompt([{
 		type: 'list',
@@ -22,8 +30,15 @@ async function configPromise() {
 	}]);
 	const { COUNTRY } = answers;
 	const entry = paths[COUNTRY];
-	const auroraConfig = countryConfig[COUNTRY];
-	auroraConfig.ENV = COUNTRY;
+
+	const uploaderConf = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../vtex-uploader.conf'), 'utf8'));
+	const vtexEnvironment = environmentMap[COUNTRY];
+	const fks = uploaderConf.environments[vtexEnvironment].fks[vtexEnvironment];
+
+	const auroraConfig = {
+		ENV: COUNTRY,
+		FKS: fks
+	};
 
 	const config = {
 		entry,
@@ -130,7 +145,7 @@ async function configPromise() {
 		// PLUGINS
 		config.plugins.push(
 			new ExtractTextPlugin({
-				filename: 'styles/webpack/[name].css'
+				filename: 'styles/[name].css'
 			})
 		);
 	}
