@@ -145,7 +145,7 @@ async function configPromise() {
 		// PLUGINS
 		config.plugins.push(
 			new ExtractTextPlugin({
-				filename: 'styles/[name].css'
+				filename: 'styles/webpack/[name].css'
 			})
 		);
 	}
