@@ -23,6 +23,7 @@ module.exports = {
 		login: path.resolve(__dirname, '../src/views/LoginView.js'),
 		'store-selection': path.resolve(__dirname, '../src/views/StoreSelectionView.js'),
 		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
+		'address-manager': path.resolve(__dirname, '../src/views/AddressManagerView.js'),
 		vendor: [
 			'react',
 			'react-dom',
