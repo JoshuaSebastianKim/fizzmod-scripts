@@ -11,6 +11,7 @@ module.exports = {
 		search: path.resolve(__dirname, '../src/views/SearchView.js'),
 		// home: path.resolve(__dirname, '../src/views/HomeView'),
 		'cart-view': path.resolve(__dirname, '../src/views/CartView.js'),
+		'catalogs-and-offers': path.resolve(__dirname, '../src/views/CatalogsAndOffers.js'),
 		vendor: [
 			'react',
 			'react-dom',
