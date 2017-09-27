@@ -46,7 +46,9 @@ async function configPromise() {
 			vtexjs: 'vtexjs',
 			Fizzmod: 'Fizzmod',
 			jQuery: 'jQuery',
-			lodash: 'lodash'
+			lodash: 'lodash',
+			store: 'store',
+			sessionStore: 'sessionStore'
 		},
 		output: {
 			filename: 'js/[name].js'
