@@ -11,6 +11,7 @@ module.exports = {
 		search: path.resolve(__dirname, '../src/views/SearchView.js'),
 		// home: path.resolve(__dirname, '../src/views/HomeView'),
 		'cart-view': path.resolve(__dirname, '../src/views/CartView.js'),
+		'catalogs-and-offers': path.resolve(__dirname, '../src/views/CatalogsAndOffers.js'),
 		vendor: [
 			'react',
 			'react-dom',
@@ -21,7 +22,9 @@ module.exports = {
 	},
 	CL: {
 		login: path.resolve(__dirname, '../src/views/LoginView.js'),
+		'store-selection': path.resolve(__dirname, '../src/views/StoreSelectionView.js'),
 		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
+		'address-manager': path.resolve(__dirname, '../src/views/AddressManagerView.js'),
 		vendor: [
 			'react',
 			'react-dom',
