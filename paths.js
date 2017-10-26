@@ -40,6 +40,7 @@ module.exports = {
 		'coverage-search': path.resolve(__dirname, '../src/views/CoverageSearchView.js'),
 		'healthy-world': path.resolve(__dirname, '../src/views/HealthyWorld.js'),
 		'bag-adder': path.resolve(__dirname, '../src/views/BagAdderView.js'),
+		'product-specifications': path.resolve(__dirname, '../src/views/ProductSpecifications.js'),
 		vendor: [
 			'react',
 			'react-dom',
