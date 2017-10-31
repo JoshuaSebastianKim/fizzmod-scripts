@@ -1,7 +1,6 @@
 // Modules
 const path = require('path');
 const webpack = require('webpack');
-const fs = require('fs');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
