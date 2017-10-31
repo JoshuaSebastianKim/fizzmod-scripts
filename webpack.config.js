@@ -7,19 +7,12 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths.js');
 const clearFolder = require('./clear-folder.js');
-const countryConfig = require('./countryConfig');
+const { createConfigModule } = require('./utils.js');
 const inquirer = require('inquirer');
 
 // Configuration
 const { argv, env } = process;
 const NODE_ENV = env.NODE_ENV || 'development';
-
-const environmentMap = {
-	AR: 'jumboargentina',
-	CL: 'jumbo',
-	CO: 'jumbocolombiafood',
-	PE: 'wongfood'
-};
 
 async function configPromise() {
 	const answers = await inquirer.prompt([{
@@ -31,14 +24,7 @@ async function configPromise() {
 	const { COUNTRY } = answers;
 	const entry = paths[COUNTRY];
 
-	const uploaderConf = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../vtex-uploader.conf'), 'utf8'));
-	const vtexEnvironment = environmentMap[COUNTRY];
-	const fks = uploaderConf.environments[vtexEnvironment].fks[vtexEnvironment];
-
-	const auroraConfig = {
-		ENV: COUNTRY,
-		FKS: fks
-	};
+	const auroraConfig = createConfigModule(COUNTRY);
 
 	const config = {
 		entry,
@@ -121,10 +107,18 @@ async function configPromise() {
 				}
 			]
 		},
+		resolve: {
+			extensions: ['.js', '.jsx'],
+			alias: {
+				config: path.resolve(__dirname, './config')
+			}
+		},
 		plugins: [
 			new webpack.DefinePlugin({
-				'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-				CONFIG: JSON.stringify(auroraConfig)
+				'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+			}),
+			new webpack.ProvidePlugin({
+				CONFIG: 'config'
 			}),
 			new webpack.optimize.CommonsChunkPlugin({
 				name: ['vendor', 'manifest'],
