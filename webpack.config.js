@@ -24,7 +24,7 @@ async function configPromise() {
 	const { COUNTRY } = answers;
 	const entry = paths[COUNTRY];
 
-	const auroraConfig = createConfigModule(COUNTRY);
+	createConfigModule(COUNTRY);
 
 	const config = {
 		entry,
