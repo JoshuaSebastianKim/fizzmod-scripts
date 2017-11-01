@@ -9,7 +9,6 @@ module.exports = {
 		'store-faqs': path.resolve(__dirname, '../src/views/FaqsView.js'),
 		'contact-contact': path.resolve(__dirname, '../src/views/ContactView.js'),
 		discounts: path.resolve(__dirname, '../src/views/DiscountView.js'),
-		search: path.resolve(__dirname, '../src/views/SearchView.js'),
 		// home: path.resolve(__dirname, '../src/views/HomeView'),
 		'catalogs-and-offers': path.resolve(__dirname, '../src/views/CatalogsAndOffers.js'),
 		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
