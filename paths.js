@@ -12,6 +12,7 @@ module.exports = {
 		// home: path.resolve(__dirname, '../src/views/HomeView'),
 		'catalogs-and-offers': path.resolve(__dirname, '../src/views/CatalogsAndOffers.js'),
 		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
+		'custom-landings': path.resolve(__dirname, '../src/views/CustomLandingsView.js'),
 		
 		vendor: [
 			'react',
