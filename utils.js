@@ -4,6 +4,7 @@ const path = require('path');
 const environmentMap = {
 	AR: 'jumboargentina',
 	CL: 'jumbo',
+	CL_QA: 'jumbochilehomolog',
 	CO: 'jumbocolombiafood',
 	PE: 'wongfood'
 };

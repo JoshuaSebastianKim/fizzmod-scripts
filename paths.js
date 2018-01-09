@@ -35,6 +35,19 @@ module.exports = {
 			'babel-polyfill'
 		]
 	},
+	CL_QA: {
+		login: path.resolve(__dirname, '../src/views/LoginView.js'),
+		'store-selection': path.resolve(__dirname, '../src/views/StoreSelectionView.js'),
+		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
+		'address-manager': path.resolve(__dirname, '../src/views/AddressManagerView.js'),
+		vendor: [
+			'react',
+			'react-dom',
+			'redux',
+			'react-redux',
+			'babel-polyfill'
+		]
+	},
 	CO: {
 		'overlay-paper-gift': path.resolve(__dirname, '../src/components/overlay-paper-gift/overlay-paper-gift.js'),
 		'coverage-search': path.resolve(__dirname, '../src/views/CoverageSearchView.js'),
