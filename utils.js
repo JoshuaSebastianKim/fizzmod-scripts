@@ -15,7 +15,8 @@ function createConfigModule(country) {
 	const fks = uploaderConf.environments[vtexEnvironment].fks[vtexEnvironment];
 
 	const config = {
-		ENV: country,
+		ENV: country.replace('_QA', ''),
+		isPROD: !/QA/.test(country),
 		FKS: fks
 	};
 
