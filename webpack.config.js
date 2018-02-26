@@ -85,7 +85,8 @@ async function configPromise() {
 										autoprefixer({
 											browsers: '> 1%, last 2 versions, iOS >= 8'
 										})
-									]
+									],
+									minimize: true
 								}
 							},
 							{
