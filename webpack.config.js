@@ -77,7 +77,10 @@ async function configPromise() {
 					] : ExtractTextPlugin.extract({
 						fallback: 'style-loader',
 						use: [
-							'css-loader',
+							{
+								loader: 'css-loader',
+								options: { minimize: true }
+							},
 							{
 								loader: 'postcss-loader',
 								options: {
@@ -85,8 +88,7 @@ async function configPromise() {
 										autoprefixer({
 											browsers: '> 1%, last 2 versions, iOS >= 8'
 										})
-									],
-									minimize: true
+									]
 								}
 							},
 							{
