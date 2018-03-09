@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 	AR: {
-		'overlay-coupons-marketec': path.resolve(__dirname, '../src/views/CartView.js'),
+		'coupons-marketec': path.resolve(__dirname, '../src/views/CouponMarketecView.js'),
 		// 'overlay-calculate-installments': path.resolve(__dirname, '../src/views/InstallmentsCalculatorView.js'),
 		'store-payment-methods': path.resolve(__dirname, '../src/views/PaymentMethodsView.js'),
 		'store-shipping-methods': path.resolve(__dirname, '../src/views/ShippingMethodsView.js'),
