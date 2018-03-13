@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
 	AR: {
-		'coupons-marketec': path.resolve(__dirname, '../src/views/CouponMarketecView.js'),
 		// 'overlay-calculate-installments': path.resolve(__dirname, '../src/views/InstallmentsCalculatorView.js'),
 		'store-payment-methods': path.resolve(__dirname, '../src/views/PaymentMethodsView.js'),
 		'store-shipping-methods': path.resolve(__dirname, '../src/views/ShippingMethodsView.js'),
@@ -13,7 +12,9 @@ module.exports = {
 		'catalogs-and-offers': path.resolve(__dirname, '../src/views/CatalogsAndOffers.js'),
 		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
 		'custom-landings': path.resolve(__dirname, '../src/views/CustomLandingsView.js'),
-		
+		'coupons-marketec': path.resolve(__dirname, '../src/views/CouponMarketecView.js'),
+		'shipping-preference': path.resolve(__dirname, '../src/components/ShippingPreference-AR/ShippingPreferenceView.js'),
+
 		vendor: [
 			'react',
 			'react-dom',
