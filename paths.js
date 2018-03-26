@@ -3,12 +3,12 @@ const path = require('path');
 module.exports = {
 	AR: {
 		// 'overlay-calculate-installments': path.resolve(__dirname, '../src/views/InstallmentsCalculatorView.js'),
+		// home: path.resolve(__dirname, '../src/views/HomeView'),
 		'store-payment-methods': path.resolve(__dirname, '../src/views/PaymentMethodsView.js'),
 		'store-shipping-methods': path.resolve(__dirname, '../src/views/ShippingMethodsView.js'),
 		'store-faqs': path.resolve(__dirname, '../src/views/FaqsView.js'),
 		'contact-contact': path.resolve(__dirname, '../src/views/ContactView.js'),
 		discounts: path.resolve(__dirname, '../src/views/DiscountView.js'),
-		// home: path.resolve(__dirname, '../src/views/HomeView'),
 		'catalogs-and-offers': path.resolve(__dirname, '../src/views/CatalogsAndOffers.js'),
 		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
 		'custom-landings': path.resolve(__dirname, '../src/views/CustomLandingsView.js'),
