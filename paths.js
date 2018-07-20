@@ -23,6 +23,28 @@ module.exports = {
 			'babel-polyfill'
 		]
 	},
+	AR_QA: {
+		// 'overlay-calculate-installments': path.resolve(__dirname, '../src/views/InstallmentsCalculatorView.js'),
+		// home: path.resolve(__dirname, '../src/views/HomeView'),
+		'store-payment-methods': path.resolve(__dirname, '../src/views/PaymentMethodsView.js'),
+		'store-shipping-methods': path.resolve(__dirname, '../src/views/ShippingMethodsView.js'),
+		'store-faqs': path.resolve(__dirname, '../src/views/FaqsView.js'),
+		'contact-contact': path.resolve(__dirname, '../src/views/ContactView.js'),
+		discounts: path.resolve(__dirname, '../src/views/DiscountView.js'),
+		'catalogs-and-offers': path.resolve(__dirname, '../src/views/CatalogsAndOffers.js'),
+		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
+		'custom-landings': path.resolve(__dirname, '../src/views/CustomLandingsView.js'),
+		'coupons-marketec': path.resolve(__dirname, '../src/views/CouponMarketecView.js'),
+		'shipping-preference': path.resolve(__dirname, '../src/components/ShippingPreference-AR/ShippingPreferenceView.js'),
+
+		vendor: [
+			'react',
+			'react-dom',
+			'redux',
+			'react-redux',
+			'babel-polyfill'
+		]
+	},
 	CL: {
 		login: path.resolve(__dirname, '../src/views/LoginView.js'),
 		'store-selection': path.resolve(__dirname, '../src/views/StoreSelectionView.js'),
@@ -64,7 +86,17 @@ module.exports = {
 		]
 	},
 	PE: {
-		'overlay-shipping-preference': path.resolve(__dirname, '../src/views/ShippingPreferenceView.js'),
+		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
+		vendor: [
+			'react',
+			'react-dom',
+			'redux',
+			'react-redux',
+			'babel-polyfill'
+		]
+	},
+	PE_QA: {
+		'overlay-shipping-preference': path.resolve(__dirname, '../src/components/ShippingPreference-PE/ShippingPreferenceView.js'),
 		'my-account': path.resolve(__dirname, '../src/views/MyAccountView.js'),
 		vendor: [
 			'react',

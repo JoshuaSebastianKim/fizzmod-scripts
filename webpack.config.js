@@ -17,7 +17,7 @@ async function configPromise() {
 	const answers = await inquirer.prompt([{
 		type: 'list',
 		name: 'COUNTRY',
-		choices: ['AR', 'CL', 'CL_QA', 'CO', 'PE'], message: 'Seleccione un país:'
+		choices: ['AR','AR_QA', 'CL', 'CL_QA', 'CO', 'PE', 'PE_QA'], message: 'Seleccione un país:'
 	}]);
 	const { COUNTRY } = answers;
 	const entry = paths[COUNTRY];

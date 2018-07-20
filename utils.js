@@ -3,10 +3,12 @@ const path = require('path');
 
 const environmentMap = {
 	AR: 'jumboargentina',
+	AR_QA: 'jumboargentinaqa',
 	CL: 'jumbo',
 	CL_QA: 'jumbochilehomolog',
 	CO: 'jumbocolombiafood',
-	PE: 'wongfood'
+	PE: 'wongfood',
+	PE_QA: 'wongfoodqa'
 };
 
 function createConfigModule(country) {
